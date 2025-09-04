@@ -209,9 +209,16 @@ return { -- LSP Plugins
       local servers = {
         clangd = {},
         -- gopls = {},
-        basedpyright = {},
+        -- pyright = {},
         ruff = {},
-        ty = {},
+        ty = {
+          inlayHints = {
+            variableTypes = true,
+          },
+          experimental = {
+            rename = true,
+          },
+        },
         zls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
